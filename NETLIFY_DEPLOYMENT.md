@@ -55,7 +55,7 @@ git push -u origin main
 
 ## Adım 3: Netlify'da Deploy
 
-### 3.1 Site Import
+### 3.1 Site "Import"
 
 1. Netlify dashboard'da **"Add new site"** > **"Import an existing project"**
 2. **"Deploy with GitHub"** seçin

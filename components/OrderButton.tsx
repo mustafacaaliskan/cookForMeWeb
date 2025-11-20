@@ -17,18 +17,21 @@ export default function OrderButton({ foodId, price }: OrderButtonProps) {
         setIsProcessing(true);
 
         try {
-            // Save to Supabase
-            const { error } = await supabase
-                .from('order_clicks')
-                .insert([
-                    {
-                        food_id: foodId,
-                        price: price,
-                    }
-                ]);
+            if (supabase) {
+                const { error } = await supabase
+                    .from('order_clicks')
+                    .insert([
+                        {
+                            food_id: foodId,
+                            price: price,
+                        }
+                    ]);
 
-            if (error) {
-                console.error('Error saving to database:', error);
+                if (error) {
+                    console.error('Error saving to database:', error);
+                }
+            } else {
+                console.warn('Supabase client is unavailable. Skipping order tracking.');
             }
 
             // Simulate processing delay for realism
