@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors - Updated to match logo */
+  --primary: #E94E3D;
+  --primary-hover: #D43D2C;
+  --secondary: #FFA07A;
+  --accent: #FFD700;
+
+  /* Neutral Colors */
+  --background: #FFF9F5;
+  --foreground: #2D2D2D;
+  --card: #FFFFFF;
+  --card-foreground: #2D2D2D;
+  --muted: #F5F5F5;
+  --muted-foreground: #6B7280;
+  --border: #E5E7EB;
+
+  /* Status */
+  --success: #10B981;
+  --error: #EF4444;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 active:scale-95 cursor-pointer;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-hover shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-white text-foreground border border-gray-200 hover:bg-gray-50;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+}
